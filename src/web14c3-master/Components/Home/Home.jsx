@@ -13,8 +13,26 @@ export const Home = () => {
     })
   },[]);
 
+  const [order,setOrder]=useState("ASC");
+  const handlesort=(res)=>{
+    if(order==="ASC"){
+      const sorted=[...books].sort((a,b)=>(a[res]>b[res]?1:-1));
+      setBooks(sorted);
+      setOrder("DESC");
+    }
+    if(order==="DESC"){
+      const sorted=[...books].sort((a,b)=>(a[res]<b[res]?1:-1));
+      setBooks(sorted);
+      setOrder("ASC");
+    }
+  }
+
   const Main = styled.div`
-    /* Apply some responsive styling to children */
+     display:grid;
+     grid-template-columns:repeat(3,1fr);
+     border:1px solid black;
+     width:98%;
+     gap:20px;
   `;
 
   return (
@@ -22,7 +40,7 @@ export const Home = () => {
       <h2 style={{ textAlign: "center" }}>Home</h2>
       <SortAndFilterButtons
         handleSort={
-          "give handleSort function to this component, that sorts books"
+          handlesort
         }
       />
 
