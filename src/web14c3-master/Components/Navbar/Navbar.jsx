@@ -4,10 +4,21 @@ export const Navbar = () => {
   return (
     <>
       <div className="navbar">
-        {/* Populate 5 buttons with EXACT same classnames as of their routes name */}
-        {/* Example: 
-            <button className="history"> Link to history here  </button>  */}
-        {/* Home component will have `/` route and classname as `home`  */}
+        <Link to={"/"}>
+        <button className="home">Home</button>
+        </Link>
+        <Link to={"/history"}>
+        <button className="history">History</button>
+        </Link>
+        <Link to={"/mystery"}>
+        <button className="mystery">Mystery</button>
+        </Link>
+        <Link to={"/technology"}>
+        <button className="technology">Technology</button>
+        </Link>
+        <Link to={"/mythology"}>
+        <button className="mythology">Mythology</button>
+        </Link>
       </div>
     </>
   );

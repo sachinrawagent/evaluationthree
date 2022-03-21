@@ -1,0 +1,60 @@
+{
+    "books":[
+        {
+            "title":"Wings of fire",
+            "imageUrl":"https://rukminim2.flixcart.com/image/416/416/juk4gi80/book/4/6/6/wings-of-fire-original-imaffmk4gx5pxqvf.jpeg?q=70",
+            "description":"Every common man who by his sheer grit and hard work achieves success should share his story with the rest for they may find inspiration and strength to go on, in his story",
+            "reviews":[
+                "excellent",
+                "good"
+            ],
+            "author":"Dr. APJ Abdul Kalam",
+            "price": 1234,
+            "section": "History",
+            "isbnNumber": 1234567,
+            "id":1
+        },
+        {
+            "title":"The Murder of Roger Acgroyd",
+            "imageUrl":"https://s2982.pcdn.co/wp-content/uploads/2016/06/the-murder-of-roger-ackroyd.jpg.webp",
+            "description":"Her Miss Marple series strongly influenced the cozy mystery sub-genre that would come later. And Then There Were None is also notable, inspiring the locked-room mystery set in a remote location trope",
+            "reviews":[
+                "excellent",
+                "good"
+            ],
+            "author":" Agatha Christie ",
+            "price": 1235,
+            "section": "mystery",
+            "isbnNumber": 1234568,
+            "id":2
+        },
+        {
+            "title":"Ramayan",
+            "imageUrl":"https://images-na.ssl-images-amazon.com/images/I/513XX0U9X+L._SY344_BO1,204,203,200_.jpg",
+            "description":"The Ramayana was composed in Sanskrit, probably not before 300 bce, by the poet Valmiki and in its present form consists of some 24,000 couplets divided into seven books.",
+            "reviews":[
+                "excellent",
+                "good"
+            ],
+            "author":"Valmiki",
+            "price": 1236,
+            "section": "mythology",
+            "isbnNumber": 1234569,
+            "id":3
+        },
+        {
+            "title":"Elon Musk",
+            "imageUrl":"https://images-na.ssl-images-amazon.com/images/I/5112YFsXIJL._SX330_BO1,204,203,200_.jpg",
+            "description":"How Elon Musk able to become an extraordinary man.",
+            "reviews":[
+                "excellent",
+                "good"
+            ],
+            "author":"Ashlee Vance",
+            "price": 1237,
+            "section": "Technology",
+            "isbnNumber": 1234570,
+            "id":4
+        }
+    ]
+}
