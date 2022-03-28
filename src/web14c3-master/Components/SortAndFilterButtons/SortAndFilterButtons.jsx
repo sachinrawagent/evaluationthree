@@ -1,6 +1,14 @@
 export const SortAndFilterButtons = ({ handleSort }) => {
+  // get all books when user lands on the page
+  // populate them as mentioned below
+
   return (
     <div className="sortButtons">
+      <button className="sortByTitleAsc" onClick={() => handleSort("titleAsc")}>sortByTitleAsc</button>
+      <button className="sortByTitleDesc" onClick={() => handleSort("titleDesc")}>sortByTitleDesc</button>
+      <button className="sortByPriceAsc" onClick={() => handleSort("priceAsc")}>sortByPriceAsc</button>
+      <button  className="sortByPriceDesc" onClick={() => handleSort("priceDesc")}>sortByPriceDesc</button>
+
       {/*
         Create 4 sorting buttons here to sort by following criteria:
 
@@ -14,10 +22,6 @@ export const SortAndFilterButtons = ({ handleSort }) => {
         and sort the data.
 
       */}
-      <button onClick={()=>handleSort("titleAsc")}  className="sortByTitleAsc">title in ascending</button>
-      <button onClick={()=>handleSort("titleDesc")} className="sortByTitleDesc">title in descending</button>
-      <button onClick={()=>handleSort("priceAsc")} className="sortByPriceAsc">price in ascending</button>
-      <button onClick={()=>handleSort("priceDesc")} className="sortByPriceDesc">price in descending</button>
     </div>
   );
 };

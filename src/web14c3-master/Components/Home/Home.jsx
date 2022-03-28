@@ -1,48 +1,46 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
 import { BookCard } from "../BookCard/BookCard";
 import { SortAndFilterButtons } from "../SortAndFilterButtons/SortAndFilterButtons";
-import styled from "styled-components"
+import axios from "axios";
+import { useState, useEffect } from "react";
+import styled from "styled-components";
 export const Home = () => {
+  const [books, setBooks] = useState([]);
   // get all books when user lands on the page
   // populate them as mentioned below
-  const [books,setBooks]=useState([]);
-  useEffect(()=>{
-    axios.get("http://localhost:8080/books").then((response)=>{
+  useEffect(() => {
+    axios.get("http://localhost:8080/books").then((response) => {
       setBooks([...response.data]);
-    })
-  },[]);
+    });
+  }, []);
 
-  const [order,setOrder]=useState("ASC");
-  const handlesort=(res)=>{
-    if(order==="ASC"){
-      const sorted=[...books].sort((a,b)=>(a[res]>b[res]?1:-1));
+  const [order, setOrder] = useState("ASC");
+
+  const handleSort = (col) => {
+    if (order === "ASC") {
+      const sorted = [...books].sort((a, b) => (a[col] > b[col] ? 1 : -1));
       setBooks(sorted);
       setOrder("DESC");
     }
-    if(order==="DESC"){
-      const sorted=[...books].sort((a,b)=>(a[res]<b[res]?1:-1));
+    if (order === "DESC") {
+      const sorted = [...books].sort((a, b) => (a[col] < b[col] ? 1 : -1));
       setBooks(sorted);
       setOrder("ASC");
     }
-  }
+  };
 
   const Main = styled.div`
-     display:grid;
-     grid-template-columns:repeat(3,1fr);
-     border:1px solid black;
-     width:98%;
-     gap:20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border: 1px solid black;
+    width: 80%;
+    gap: 20px;
+    /* Apply some responsive styling to children */
   `;
 
   return (
     <div className="homeContainer">
       <h2 style={{ textAlign: "center" }}>Home</h2>
-      <SortAndFilterButtons
-        handleSort={
-          handlesort
-        }
-      />
+      <SortAndFilterButtons handleSort={handleSort} />
 
       <Main className="mainContainer">
         {/* 
@@ -51,10 +49,16 @@ export const Home = () => {
             pass down books id, imageUrl, title, price and anything else that you want to 
             show in books Card.
         */}
-        {books.map((el)=>{
+        {books.map((el) => {
           return (
-            <BookCard imageUrl={el.imageUrl} title={el.title} price={el.price} id={el.id}/>
-          )
+            <BookCard
+              id={el.id}
+              imageUrl={el.imageUrl}
+              title={el.title}
+              description={el.description}
+              price={el.price}
+            />
+          );
         })}
       </Main>
     </div>
